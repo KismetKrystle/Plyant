@@ -1,11 +1,13 @@
 # 🌿 Plyant 
 A dApp to help small-scale farmers in developing countries document and transfer land rights.
 
-### Requirements
+## Getting Started
 
-- Node.js 14+ and npm
+## Requirements
 
-### Getting started
+- [Node.js 14+](https://nodejs.org/) and `npm`
+
+### Installing
 
 Run the following command on your local environment:
 
@@ -36,8 +38,15 @@ You can create an optimized production build with:
 npm run build-prod
 ```
 
-Now, the project is ready to be deployed. All generated files are located at `out` folder.
+Now, the project is ready to be deployed. All generated files are located in `out` folder.
 
-### Contributions
+## Built With
+- ⚡ [Next.js](https://nextjs.org/)
+- ⌨️ [TypeScript](https://www.typescriptlang.org/)
+- 🎨 [Tailwind CSS](https://tailwindcss.com/)
+- 🚀 [Reach](https://docs.reach.sh/)
 
-Everyone is welcome to contribute to this project. Feel free to open an issue if you have question or found a bug. 🐞
+## Contributors
+- [@hollielu](https://github.com/hollielu)
+- [@gomathi1806](https://github.com/gomathi1806)
+- [@nardoshood](https://github.com/nardoshood)
