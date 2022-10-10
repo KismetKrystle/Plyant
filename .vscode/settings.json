@@ -20,5 +20,9 @@
   "[json][jsonc]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "files.associations": {
+    "*.rsh": "javascript"
+  },
+  "javascript.suggest.completeFunctionCalls": true
 }
