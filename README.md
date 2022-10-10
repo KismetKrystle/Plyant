@@ -1,4 +1,5 @@
-# 🌿 Plyant 
+# 🌿 Plyant
+
 A dApp to help small-scale farmers in developing countries document and transfer land rights.
 
 ## Getting Started
@@ -41,12 +42,14 @@ npm run build-prod
 Now, the project is ready to be deployed. All generated files are located in `out` folder.
 
 ## Built With
+
 - ⚡ [Next.js](https://nextjs.org/)
 - ⌨️ [TypeScript](https://www.typescriptlang.org/)
 - 🎨 [Tailwind CSS](https://tailwindcss.com/)
 - 🚀 [Reach](https://docs.reach.sh/)
 
 ## Contributors
+
 - [@hollielu](https://github.com/hollielu)
 - [@gomathi1806](https://github.com/gomathi1806)
 - [@nardoshood](https://github.com/nardoshood)

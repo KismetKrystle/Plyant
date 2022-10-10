@@ -8,16 +8,9 @@
 # testing
 /coverage
 
-# cypress
-cypress/screenshots
-cypress/videos
-
 # next.js
-/.next
-/out
-
-# cache
-.swc/
+/.next/
+/out/
 
 # production
 /build
@@ -25,19 +18,19 @@ cypress/videos
 # misc
 .DS_Store
 *.pem
-Thumbs.db
 
 # debug
 npm-debug.log*
-pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# dotenv local files
+# local env files
 .env*.local
-
-# local folder
-local
 
 # vercel
 .vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
