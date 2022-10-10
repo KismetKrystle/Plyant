@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { ConnectWallet } from './ConnectWallet';
 
 const Navbar = () => (
   <header>
@@ -43,9 +44,7 @@ const Navbar = () => (
 
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
-              <button className="rounded-md bg-green-600 px-5 py-2.5 text-sm font-medium text-white shadow">
-                <Link href="/">Connect Wallet</Link>
-              </button>
+              <ConnectWallet />
             </div>
 
             <div className="block md:hidden">

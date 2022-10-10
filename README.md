@@ -44,9 +44,8 @@ Now, the project is ready to be deployed. All generated files are located in `ou
 ## Built With
 
 - ⚡ [Next.js](https://nextjs.org/)
-- ⌨️ [TypeScript](https://www.typescriptlang.org/)
 - 🎨 [Tailwind CSS](https://tailwindcss.com/)
-- 🚀 [Reach](https://docs.reach.sh/)
+- 🌻 [PeraWallet](https://perawallet.app/)
 
 ## Contributors
 

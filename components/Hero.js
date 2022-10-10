@@ -16,7 +16,9 @@ const Hero = () => (
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <button className="block w-full rounded bg-green-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-green-700 focus:outline-none focus:ring active:bg-green-500 sm:w-auto">
-            <Link href="/">Create a Wallet</Link>
+            <Link href="https://perawallet.app/">
+              <a target="_blank">Create a Pera Wallet</a>
+            </Link>
           </button>
 
           <button className="block w-full rounded px-12 py-3 text-sm font-medium text-green-600 shadow hover:text-green-700 focus:outline-none focus:ring active:text-green-500 sm:w-auto">
