@@ -30,15 +30,6 @@ const Navbar = () => (
                   About
                 </Link>
               </li>
-
-              <li>
-                <Link
-                  className="text-gray-500 transition hover:text-gray-500/75"
-                  href="/"
-                >
-                  🔍 &nbsp;Browse All Farm NFTs
-                </Link>
-              </li>
             </ul>
           </nav>
 
