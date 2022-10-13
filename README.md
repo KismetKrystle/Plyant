@@ -1,6 +1,6 @@
 # 🌿 Plyant
 
-A dApp to help small-scale farmers in developing countries document and transfer land rights.
+A NFT directory of vertical farms and the crops they grow.
 
 ## Getting Started
 
