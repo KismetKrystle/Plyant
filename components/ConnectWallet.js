@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 const peraWallet = new PeraWalletConnect();
 
-const ConnectWallet = () => {
+export default function ConnectWallet() {
   const [accountAddress, setAccountAddress] = useState(null);
   const isConnectedToPeraWallet = !!accountAddress;
 
@@ -54,6 +54,4 @@ const ConnectWallet = () => {
       {isConnectedToPeraWallet ? 'Disconnect' : 'Connect to Pera Wallet'}
     </button>
   );
-};
-
-export { ConnectWallet };
+}

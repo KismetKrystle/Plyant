@@ -1,20 +1,10 @@
-import Head from 'next/head';
-import { Hero } from '../components/Hero';
-import { Navbar } from '../components/Navbar';
+import Hero from '../components/Hero';
+import Layout from '../components/Layout';
 
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>Plyant</title>
-        <meta
-          name="description"
-          content="A dApp to help small-scale farmers in developing countries document and transfer land rights"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar />
+    <Layout>
       <Hero />
-    </div>
+    </Layout>
   );
 }
