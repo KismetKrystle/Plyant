@@ -21,22 +21,6 @@ export default function Navbar() {
           </div>
 
           <div className="md:flex md:items-center md:gap-12">
-            <nav
-              className="hidden md:block"
-              aria-labelledby="header-navigation"
-            >
-              <ul className="flex items-center gap-6 text-sm">
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/about"
-                  >
-                    About
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-
             <div className="flex items-center gap-4">
               <div className="sm:flex sm:gap-4">
                 <ConnectWallet />
