@@ -1,14 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import RadioButton from '../components/RadioButton';
-import { USER_ROLES } from '../constants';
 import { useRouter } from 'next/router';
+import { isAuthenticated } from '../services/authService';
+import { USER_ROLES } from '../constants';
 
 export default function Onboarding() {
   const [userRole, setUserRole] = useState(null);
   const router = useRouter();
-  const user = {};
+  const user = isAuthenticated();
+  const { walletAddress, role } = user;
   const { farmer, distributor } = USER_ROLES;
+
+  useEffect(() => {
+    if (!walletAddress) router.push('/');
+    if (role === farmer) router.push('/farmer/register');
+    if (role === distributor) router.push('/distributor/register');
+  }, [distributor, farmer, role, router, walletAddress]);
 
   const handleFarmerChange = () => setUserRole(farmer);
   const handleDistributorChange = () => setUserRole(distributor);
@@ -17,6 +25,7 @@ export default function Onboarding() {
     event.preventDefault();
 
     user.role = userRole;
+
     // TODO: Remove localStorage and set User.role in the database
     localStorage.setItem('user', JSON.stringify(user));
 
