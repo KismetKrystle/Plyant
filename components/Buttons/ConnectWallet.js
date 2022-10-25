@@ -1,7 +1,7 @@
 import { PeraWalletConnect } from '@perawallet/connect';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { isAuthenticated } from '../services/authService';
+import { isAuthenticated } from '../../services/authService';
 
 const peraWallet = new PeraWalletConnect();
 
