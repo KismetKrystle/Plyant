@@ -18,12 +18,13 @@ export default function Dashboard() {
 
   return (
     <Layout>
-      <div className="flex flex-col max-w-5xl px-2 mx-auto space-y-4">
-        <div className="flex flex-col my-6 space-y-3 p-8">
-          <div className="mx-auto max-w-xl">
-            <h1 className="text-2xl font-extrabold sm:text-4xl text-center">
+      <div className="p-6 flex items-center justify-center">
+        <div className="container max-w-screen-lg mx-auto">
+          <div>
+            <h2 className="font-semibold text-xl text-gray-600">
               Distributor Dashboard
-            </h1>
+            </h2>
+            <p className="text-gray-500 mb-6">Welcome to your dashboard.</p>
           </div>
         </div>
       </div>
