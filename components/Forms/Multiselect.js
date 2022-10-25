@@ -10,8 +10,8 @@ export default function Multiselect({ label, options, name }) {
         className="form-multiselect h-20 border mt-1 rounded px-4 w-full bg-gray-50"
         multiple
       >
-        {options.map((option, idx) => (
-          <option key={idx} value={option.value}>
+        {options.map((option) => (
+          <option key={option.id} value={option.name}>
             {option.name}
           </option>
         ))}

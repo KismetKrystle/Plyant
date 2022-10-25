@@ -23,7 +23,7 @@ export default function Onboarding() {
 
   useEffect(() => {
     if (!walletAddress) router.push('/');
-    if (role === farmer) router.push('/farmer/register');
+    if (role === farmer) router.push('/farmer/register/farm');
     if (role === distributor) router.push('/distributor/register');
   }, [distributor, farmer, role, router, walletAddress]);
 
@@ -34,7 +34,7 @@ export default function Onboarding() {
     localStorage.setItem('user', JSON.stringify(user));
 
     if (user.role === farmer) {
-      router.push('/farmer/register');
+      router.push('/farmer/register/farm');
     } else if (user.role === distributor) {
       router.push('/distributor/register');
     }
