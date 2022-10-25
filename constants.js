@@ -4,23 +4,29 @@ export const USER_ROLES = {
 };
 
 export const CROPS = [
-  { name: 'Corn', value: 'corn' },
-  { name: 'Tomatoes', value: 'tomatoes' },
-  { name: 'Lettuce', value: 'lettuce' },
-  { name: 'Potatoes', value: 'potatoes' },
-  { name: 'Asparagus', value: 'asparagus' },
+  { id: 1, name: 'Corn' },
+  { id: 2, name: 'Tomatoes' },
+  { id: 3, name: 'Lettuce' },
+  { id: 4, name: 'Potatoes' },
+  { id: 5, name: 'Asparagus' },
 ];
 
 export const CERTIFICATES = [
-  { name: 'Amazing', value: 'amazing' },
-  { name: 'Incredible', value: 'incredible' },
-  { name: 'Terrible', value: 'terrible' },
-  { name: 'Great', value: 'great' },
-  { name: 'Okay', value: 'okay' },
+  { id: 1, name: 'Amazing' },
+  { id: 2, name: 'Incredible' },
+  { id: 3, name: 'Terrible' },
+  { id: 4, name: 'Great' },
+  { id: 5, name: 'Okay' },
 ];
 
 export const FARM_TYPES = [
-  { name: 'Aquaponic', value: 'aquaponic' },
-  { name: 'Hydroponic', value: 'hydroponic' },
-  { name: 'Traditional', value: 'traditional' },
+  { id: 1, name: 'Aquaponic' },
+  { id: 2, name: 'Hydroponic' },
+  { id: 3, name: 'Traditional' },
+];
+
+export const PESTICIDES = [
+  { id: 1, name: 'Organic' },
+  { id: 2, name: 'Chemical-Based' },
+  { id: 3, name: 'None' },
 ];

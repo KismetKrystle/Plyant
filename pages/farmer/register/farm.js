@@ -1,12 +1,17 @@
-import Layout from '../../components/Layout';
+import Layout from '../../../components/Layout';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { isAuthenticated } from '../../services/authService';
-import { USER_ROLES, CROPS, CERTIFICATES, FARM_TYPES } from '../../constants';
-import Input from '../../components/Forms/Input';
-import Multiselect from '../../components/Forms/Multiselect';
-import Dropdown from '../../components/Forms/Dropdown';
-import Submit from '../../components/Buttons/Submit';
+import { isAuthenticated } from '../../../services/authService';
+import {
+  USER_ROLES,
+  CROPS,
+  CERTIFICATES,
+  FARM_TYPES,
+} from '../../../constants';
+import Input from '../../../components/Forms/Input';
+import Multiselect from '../../../components/Forms/Multiselect';
+import Dropdown from '../../../components/Forms/Dropdown';
+import Submit from '../../../components/Buttons/Submit';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
@@ -30,7 +35,7 @@ const RegisterSchema = Yup.object().shape({
   verticalGrowArea: Yup.number().positive().integer().required('Required'),
   groundGrowArea: Yup.number().positive().integer().required('Required'),
   farmType: Yup.string()
-    .oneOf([FARM_TYPES.map((farm) => farm.value)])
+    .oneOf([FARM_TYPES.map((farm) => farm.name)])
     .required('Required'),
   certificates: Yup.array().min(1).required('Required'),
   crops: Yup.array().min(1).required('Required'),
@@ -62,11 +67,15 @@ export default function Register() {
   }, [distributor, farmer, role, router, walletAddress]);
 
   const onSubmit = (values) => {
+    values.crops = CROPS.filter((crop) => {
+      return values.crops.some((name) => crop.name === name);
+    });
+
     let { farms } = user;
     farms = farms ? [...farms, values] : [values];
     user.farms = farms;
 
-    // TODO: Remove localStorage and set farm in database
+    // TODO: Remove localStorage and create farm NFT
     localStorage.setItem('user', JSON.stringify(user));
     router.push('/farmer/');
   };
@@ -94,7 +103,7 @@ export default function Register() {
                   validationSchema={RegisterSchema}
                   onSubmit={onSubmit}
                 >
-                  {({ isSubmitting, isValid }) => (
+                  {({ isSubmitting, isValid, dirty }) => (
                     <Form className="lg:col-span-2">
                       <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-6">
                         <div className="md:col-span-3">
@@ -191,7 +200,7 @@ export default function Register() {
                           <div className="inline-flex items-end">
                             <Submit
                               isSubmitting={isSubmitting}
-                              isValid={isValid}
+                              isValid={isValid && dirty}
                             />
                           </div>
                         </div>

@@ -42,7 +42,7 @@ export default function Register() {
   const onSubmit = ({ manager, company, address }) => {
     user = { ...user, manager, company, address };
 
-    // TODO: Remove localStorage and set farm in database
+    // TODO: Remove localStorage and update user in database
     localStorage.setItem('user', JSON.stringify(user));
     router.push('/distributor/');
   };

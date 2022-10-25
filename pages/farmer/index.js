@@ -13,7 +13,7 @@ export default function Dashboard() {
   useEffect(() => {
     if (!walletAddress) router.push('/');
     if (role === distributor) router.push('/distributor');
-    if (!farms) router.push('/farmer/register');
+    if (!farms) router.push('/farmer/register/farm');
   }, [distributor, farmer, role, farms, router, walletAddress]);
 
   return (
