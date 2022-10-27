@@ -30,7 +30,7 @@ export default function Dashboard() {
           </h2>
           <p className="text-gray-500 mb-6">Welcome to your dashboard.</p>
           {user?.farms && <Farms farms={user.farms} />}
-          {user?.crops && <Crops crops={user.crops} />}
+          {user?.crops && <Crops headerText="Crops" crops={user.crops} />}
         </div>
       </div>
     </Layout>
