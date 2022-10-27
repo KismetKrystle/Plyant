@@ -13,6 +13,9 @@ export default function Farms({ farms }) {
               <thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                 <tr>
                   <th className="p-2 whitespace-nowrap">
+                    <div className="font-semibold text-left">Name</div>
+                  </th>
+                  <th className="p-2 whitespace-nowrap">
                     <div className="font-semibold text-left">Owner</div>
                   </th>
                   <th className="p-2 whitespace-nowrap">
@@ -56,6 +59,9 @@ export default function Farms({ farms }) {
               <tbody className="text-sm divide-y divide-gray-100">
                 {farms.map((farm, idx) => (
                   <tr key={idx}>
+                    <td className="p-2 whitespace-nowrap">
+                      <div className="text-left">{farm.name}</div>
+                    </td>
                     <td className="p-2 whitespace-nowrap">
                       <div className="text-left">{farm.owner}</div>
                     </td>

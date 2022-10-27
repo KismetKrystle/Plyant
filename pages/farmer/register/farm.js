@@ -16,6 +16,10 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 const RegisterSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
   owner: Yup.string()
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
@@ -47,6 +51,7 @@ export default function Register() {
   const { walletAddress, role } = user;
   const { farmer, distributor } = USER_ROLES;
   const initialValues = {
+    name: '',
     owner: '',
     farmer: '',
     address: '',
@@ -106,6 +111,13 @@ export default function Register() {
                   {({ isSubmitting, isValid, dirty }) => (
                     <Form className="lg:col-span-2">
                       <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-6">
+                        <div className="md:col-span-6">
+                          <Input
+                            label="Name"
+                            name="name"
+                            placeholder="Magnolia Ranch"
+                          />
+                        </div>
                         <div className="md:col-span-3">
                           <Input
                             label="Owner"
