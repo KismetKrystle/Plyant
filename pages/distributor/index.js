@@ -2,7 +2,8 @@ import Layout from '../../components/Layout';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { isAuthenticated } from '../../services/authService';
-import { USER_ROLES } from '../../constants';
+import { USER_ROLES, CROPS_FOR_SALE } from '../../constants';
+import Crops from '../../components/Crops';
 
 export default function Dashboard() {
   const router = useRouter();
@@ -25,6 +26,12 @@ export default function Dashboard() {
               Distributor Dashboard
             </h2>
             <p className="text-gray-500 mb-6">Welcome to your dashboard.</p>
+            <Crops
+              headerText="Crops for Sale"
+              // TODO: Switch hardcoded code out with Crop NFTs
+              crops={CROPS_FOR_SALE}
+              buyButton
+            />
           </div>
         </div>
       </div>

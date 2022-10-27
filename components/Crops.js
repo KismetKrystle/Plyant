@@ -1,11 +1,13 @@
 import currency from 'currency.js';
 
-export default function Crops({ crops }) {
+export default function Crops({ headerText, crops, buyButton }) {
   return (
     <section className="antialiased bg-gray-100 text-gray-600">
       <div className="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
         <header className="px-5 py-4 border-b border-gray-100">
-          <h2 className="font-semibold text-gray-800 inline-block">Crops</h2>
+          <h2 className="font-semibold text-gray-800 inline-block">
+            {headerText}
+          </h2>
         </header>
         <div className="p-3">
           <div className="overflow-x-auto">
@@ -35,6 +37,7 @@ export default function Crops({ crops }) {
                       Special Treatments
                     </div>
                   </th>
+                  {buyButton && <th className="p-2 whitespace-nowrap"></th>}
                 </tr>
               </thead>
               <tbody className="text-sm divide-y divide-gray-100">
@@ -63,6 +66,13 @@ export default function Crops({ crops }) {
                     <td className="p-2 whitespace-nowrap">
                       <div className="text-left">{crop.specialTreatments}</div>
                     </td>
+                    {buyButton && (
+                      <td className="p-2 whitespace-nowrap">
+                        <button className="rounded-md px-4 py-1.5 text-xs font-md text-white shadow bg-green-600 cursor-not-allowed">
+                          Buy
+                        </button>
+                      </td>
+                    )}
                   </tr>
                 ))}
               </tbody>
