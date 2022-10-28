@@ -27,11 +27,21 @@ export const CROPS = [
 ];
 
 export const CERTIFICATES = [
-  { id: 1, name: 'Amazing' },
-  { id: 2, name: 'Incredible' },
-  { id: 3, name: 'Terrible' },
-  { id: 4, name: 'Great' },
-  { id: 5, name: 'Okay' },
+  { id: 1, name: 'Rainforest Alliance (RA)' },
+  { id: 2, name: 'Food Alliance (FA)' },
+  { id: 3, name: 'Whole Foods Responsibly Grown (WFRG)' },
+  { id: 4, name: 'United States Department of Agriculture Organic (USDA-O)' },
+  {
+    id: 5,
+    name: 'United States Department of Agriculture Good Agricultural Practices (USDA GAP)',
+  },
+  { id: 6, name: 'Fair Trade USA (FTU)' },
+  { id: 7, name: 'Certified Greenhouse Farmers (CGF)' },
+  { id: 8, name: 'Nursery and Greenhouse Standard (FA-GN)' },
+  { id: 9, name: 'LEED' },
+  { id: 10, name: 'Energy Star' },
+  { id: 11, name: 'BREEAM' },
+  { id: 12, name: 'Living Building Challenge' },
 ];
 
 export const FARM_TYPES = [
