@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# Algorand
+sandbox/
+Algorand/.env
+
+# Python Env
+plyntenv/
