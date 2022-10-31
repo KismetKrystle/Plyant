@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@perawallet/connect": "^0.2.3",
-    "algosdk": "^1.21.0",
+    "algosdk": "^1.22.0",
+    "beaker-ts": "^0.0.55",
     "currency.js": "^2.0.4",
     "formik": "^2.2.9",
     "next": "12.3.1",
@@ -24,5 +25,17 @@
     "eslint-config-next": "12.3.1",
     "postcss": "^8.4.17",
     "tailwindcss": "^3.1.8"
-  }
+  },
+  "description": "A NFT directory of vertical farms and the crops they grow.",
+  "main": "constants.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollielu/Plyant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hollielu/Plyant/issues"
+  },
+  "homepage": "https://github.com/hollielu/Plyant#readme"
 }
