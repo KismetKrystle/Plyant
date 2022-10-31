@@ -12,6 +12,7 @@ import Input from '../../../components/Forms/Input';
 import Multiselect from '../../../components/Forms/Multiselect';
 import Dropdown from '../../../components/Forms/Dropdown';
 import Submit from '../../../components/Buttons/Submit';
+import Checkbox from '../../../components/Forms/Checkbox';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
@@ -43,6 +44,7 @@ const RegisterSchema = Yup.object().shape({
     .required('Required'),
   certificates: Yup.array().min(1).required('Required'),
   crops: Yup.array().min(1).required('Required'),
+  reviewedForm: Yup.bool().oneOf([true], 'Field must be checked'),
 });
 
 export default function Register() {
@@ -64,6 +66,7 @@ export default function Register() {
     farmType: '',
     certificates: [],
     crops: [],
+    reviewedForm: false,
   };
 
   useEffect(() => {
@@ -122,7 +125,7 @@ export default function Register() {
                           <Input
                             label="Owner"
                             name="owner"
-                            placeholder="Krystal Kismet"
+                            placeholder="Krystle Kismet"
                           />
                         </div>
                         <div className="md:col-span-3">
@@ -208,11 +211,21 @@ export default function Register() {
                             options={CROPS}
                           />
                         </div>
-                        <div className="md:col-span-6 text-right">
+                        <div className="md:col-span-6">
+                          <div className="text-sm text-gray-500">
+                            Hold down the command (or control) button to select
+                            multiple options.
+                          </div>
+                        </div>
+                        <div className="md:col-span-6">
+                          <Checkbox name="reviewedForm" />
+                        </div>
+                        <div className="md:col-span-6 text-right mt-2">
                           <div className="inline-flex items-end">
                             <Submit
                               isSubmitting={isSubmitting}
                               isValid={isValid && dirty}
+                              buttonText="Create NFT"
                             />
                           </div>
                         </div>

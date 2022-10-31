@@ -1,8 +1,14 @@
 import currency from 'currency.js';
 
-export default function Crops({ headerText, crops, buyButton }) {
+export default function Crops({
+  headerText,
+  crops,
+  buyButton,
+  buttonText,
+  specialTreatments,
+}) {
   return (
-    <section className="antialiased bg-gray-100 text-gray-600">
+    <section className="antialiased bg-gray-100 text-gray-600 mb-5">
       <div className="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
         <header className="px-5 py-4 border-b border-gray-100">
           <h2 className="font-semibold text-gray-800 inline-block">
@@ -21,6 +27,9 @@ export default function Crops({ headerText, crops, buyButton }) {
                     <div className="font-semibold text-left">Type</div>
                   </th>
                   <th className="p-2 whitespace-nowrap">
+                    <div className="font-semibold text-left">Farm</div>
+                  </th>
+                  <th className="p-2 whitespace-nowrap">
                     <div className="font-semibold text-left">Cost</div>
                   </th>
                   <th className="p-2 whitespace-nowrap">
@@ -32,11 +41,13 @@ export default function Crops({ headerText, crops, buyButton }) {
                   <th className="p-2 whitespace-nowrap">
                     <div className="font-semibold text-left">Pesticides</div>
                   </th>
-                  <th className="p-2 whitespace-nowrap">
-                    <div className="font-semibold text-left">
-                      Special Treatments
-                    </div>
-                  </th>
+                  {specialTreatments && (
+                    <th className="p-2 whitespace-nowrap">
+                      <div className="font-semibold text-left">
+                        Special Treatments
+                      </div>
+                    </th>
+                  )}
                   {buyButton && <th className="p-2 whitespace-nowrap"></th>}
                 </tr>
               </thead>
@@ -48,6 +59,9 @@ export default function Crops({ headerText, crops, buyButton }) {
                     </td>
                     <td className="p-2 whitespace-nowrap">
                       <div className="text-left">{crop.type}</div>
+                    </td>
+                    <td className="p-2 whitespace-nowrap">
+                      <div className="text-left">{crop.farm}</div>
                     </td>
                     <td className="p-2 whitespace-nowrap">
                       <div className="text-left">
@@ -63,13 +77,17 @@ export default function Crops({ headerText, crops, buyButton }) {
                     <td className="p-2 whitespace-nowrap">
                       <div className="text-left">{crop.pesticides}</div>
                     </td>
-                    <td className="p-2 whitespace-nowrap">
-                      <div className="text-left">{crop.specialTreatments}</div>
-                    </td>
-                    {buyButton && (
+                    {specialTreatments && (
                       <td className="p-2 whitespace-nowrap">
+                        <div className="text-left">
+                          {crop.specialTreatments}
+                        </div>
+                      </td>
+                    )}
+                    {buyButton && (
+                      <td className="p-2 whitespace-nowrap float-right">
                         <button className="rounded-md px-4 py-1.5 text-xs font-md text-white shadow bg-green-600 cursor-not-allowed">
-                          Buy
+                          {buttonText}
                         </button>
                       </td>
                     )}

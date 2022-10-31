@@ -62,7 +62,7 @@ export default function ConnectWallet() {
           : handleConnectWalletClick
       }
     >
-      {isConnectedToPeraWallet ? 'Disconnect' : 'Connect to Pera Wallet'}
+      {isConnectedToPeraWallet ? 'Disconnect' : 'Connect to Wallet'}
     </button>
   );
 }

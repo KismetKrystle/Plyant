@@ -9,8 +9,10 @@ import Submit from '../../../components/Buttons/Submit';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import Textarea from '../../../components/Forms/Textarea';
+import Checkbox from '../../../components/Forms/Checkbox';
 
 const CropsSchema = Yup.object().shape({
+  farm: Yup.string().required('Required'),
   type: Yup.string()
     .oneOf([CROPS.map((crop) => crop.name)])
     .required('Required'),
@@ -23,6 +25,7 @@ const CropsSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(1000, 'Too Long!')
     .required('Required'),
+  reviewedForm: Yup.bool().oneOf([true], 'Field must be checked'),
 });
 
 export default function Crops() {
@@ -32,6 +35,7 @@ export default function Crops() {
   const { walletAddress, role, farms } = user;
   const { farmer, distributor } = USER_ROLES;
   const initialValues = {
+    farm: '',
     type: '',
     dateHarvested: '',
     datePlanted: '',
@@ -86,6 +90,13 @@ export default function Crops() {
                   {({ isSubmitting, isValid, dirty }) => (
                     <Form className="lg:col-span-2">
                       <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-6">
+                        <div className="md:col-span-6">
+                          <Dropdown
+                            label="Farm"
+                            name="farm"
+                            options={user.farms}
+                          />
+                        </div>
                         <div className="md:col-span-3">
                           <Dropdown
                             label="Type"
@@ -139,11 +150,15 @@ export default function Crops() {
                             placeholder="I played Mozart every day at sundown."
                           />
                         </div>
+                        <div className="md:col-span-6">
+                          <Checkbox name="reviewedForm" />
+                        </div>
                         <div className="md:col-span-6 text-right">
                           <div className="inline-flex items-end">
                             <Submit
                               isSubmitting={isSubmitting}
                               isValid={isValid && dirty}
+                              buttonText="Create NFT"
                             />
                           </div>
                         </div>

@@ -58,6 +58,7 @@ export const PESTICIDES = [
 
 export const CROPS_FOR_SALE = [
   {
+    farm: 'Bella Vista Ranch',
     type: 'Lettuce',
     dateHarvested: '10/01/22',
     datePlanted: '09/01/22',
@@ -67,6 +68,7 @@ export const CROPS_FOR_SALE = [
     specialTreatments: 'I played Mozart to them.',
   },
   {
+    farm: 'Best Choice Farms',
     type: 'Kale',
     dateHarvested: '10/02/22',
     datePlanted: '09/02/22',
@@ -76,6 +78,7 @@ export const CROPS_FOR_SALE = [
     specialTreatments: '',
   },
   {
+    farm: 'Best Choice Farms',
     type: 'Radish',
     dateHarvested: '10/04/22',
     datePlanted: '09/09/22',
@@ -85,6 +88,7 @@ export const CROPS_FOR_SALE = [
     specialTreatments: 'I kept them in darkness.',
   },
   {
+    farm: 'Blueberry Hills',
     type: 'Potatoes',
     dateHarvested: '10/06/22',
     datePlanted: '09/17/22',
@@ -94,6 +98,7 @@ export const CROPS_FOR_SALE = [
     specialTreatments: '',
   },
   {
+    farm: 'Allison Acres',
     type: 'Mustard',
     dateHarvested: '10/08/22',
     datePlanted: '09/18/22',
@@ -102,7 +107,11 @@ export const CROPS_FOR_SALE = [
     pesticides: 'Chemical-Based',
     specialTreatments: '',
   },
+];
+
+export const CROPS_BOUGHT = [
   {
+    farm: 'Fruits & Veggies',
     type: 'Basil',
     dateHarvested: '10/18/22',
     datePlanted: '09/14/22',
@@ -112,6 +121,7 @@ export const CROPS_FOR_SALE = [
     specialTreatments: '',
   },
   {
+    farm: 'Green Orchids',
     type: 'Onions',
     dateHarvested: '10/20/22',
     datePlanted: '09/16/22',
@@ -121,6 +131,7 @@ export const CROPS_FOR_SALE = [
     specialTreatments: 'I kept the temperature at freezing.',
   },
   {
+    farm: 'Magnolia Ranch',
     type: 'Garlic',
     dateHarvested: '10/22/22',
     datePlanted: '09/02/22',
@@ -130,6 +141,7 @@ export const CROPS_FOR_SALE = [
     specialTreatments: '',
   },
   {
+    farm: 'Magnolia Ranch',
     type: 'Potatoes',
     dateHarvested: '10/23/22',
     datePlanted: '09/18/22',
@@ -139,6 +151,7 @@ export const CROPS_FOR_SALE = [
     specialTreatments: '',
   },
   {
+    farm: 'Fruits & Veggies',
     type: 'Peppermint',
     dateHarvested: '10/24/22',
     datePlanted: '09/06/22',

@@ -10,6 +10,7 @@ export default function Dropdown({ options, label, name }) {
         name={name}
         className={`${styles.dropdown} form-control border mt-1 rounded px-4 w-full bg-gray-50`}
       >
+        <option>Select an option</option>
         {options.map((option) => (
           <option key={option.id} value={option.name}>
             {option.name}

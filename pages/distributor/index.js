@@ -2,7 +2,7 @@ import Layout from '../../components/Layout';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { isAuthenticated } from '../../services/authService';
-import { USER_ROLES, CROPS_FOR_SALE } from '../../constants';
+import { USER_ROLES, CROPS_FOR_SALE, CROPS_BOUGHT } from '../../constants';
 import Crops from '../../components/Crops';
 
 export default function Dashboard() {
@@ -30,6 +30,15 @@ export default function Dashboard() {
               headerText="Crops for Sale"
               // TODO: Switch hardcoded code out with Crop NFTs
               crops={CROPS_FOR_SALE}
+              buttonText="Buy"
+              specialTreatments
+              buyButton
+            />
+            <Crops
+              headerText="History"
+              // TODO: Switch hardcoded code out with Crop NFTs
+              crops={CROPS_BOUGHT}
+              buttonText="Purchase Again"
               buyButton
             />
           </div>

@@ -77,7 +77,7 @@ export default function Register() {
                           <Input
                             label="Manager"
                             name="manager"
-                            placeholder="Krystal Kismet"
+                            placeholder="Krystle Kismet"
                           />
                         </div>
                         <div className="md:col-span-3">

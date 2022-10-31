@@ -1,4 +1,8 @@
-export default function Submit({ isSubmitting, isValid }) {
+export default function Submit({
+  isSubmitting,
+  isValid,
+  buttonText = 'Submit',
+}) {
   const disabled = isSubmitting || !isValid;
 
   return (
@@ -11,7 +15,7 @@ export default function Submit({ isSubmitting, isValid }) {
       type="submit"
       disabled={disabled}
     >
-      Submit
+      {buttonText}
     </button>
   );
 }
