@@ -2,7 +2,8 @@ import Layout from '../../components/Layout';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { isAuthenticated } from '../../services/authService';
-import { USER_ROLES } from '../../constants';
+import { USER_ROLES, CROPS_FOR_SALE, CROPS_BOUGHT } from '../../constants';
+import Crops from '../../components/Crops';
 
 export default function Dashboard() {
   const router = useRouter();
@@ -18,12 +19,28 @@ export default function Dashboard() {
 
   return (
     <Layout>
-      <div className="flex flex-col max-w-5xl px-2 mx-auto space-y-4">
-        <div className="flex flex-col my-6 space-y-3 p-8">
-          <div className="mx-auto max-w-xl">
-            <h1 className="text-2xl font-extrabold sm:text-4xl text-center">
+      <div className="p-6 flex items-center justify-center">
+        <div className="container max-w-screen-lg mx-auto">
+          <div>
+            <h2 className="font-semibold text-xl text-gray-600">
               Distributor Dashboard
-            </h1>
+            </h2>
+            <p className="text-gray-500 mb-6">Welcome to your dashboard.</p>
+            <Crops
+              headerText="Crops for Sale"
+              // TODO: Switch hardcoded code out with Crop NFTs
+              crops={CROPS_FOR_SALE}
+              buttonText="Buy"
+              specialTreatments
+              buyButton
+            />
+            <Crops
+              headerText="History"
+              // TODO: Switch hardcoded code out with Crop NFTs
+              crops={CROPS_BOUGHT}
+              buttonText="Purchase Again"
+              buyButton
+            />
           </div>
         </div>
       </div>

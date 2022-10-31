@@ -1,30 +1,36 @@
 import Layout from '../../components/Layout';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { isAuthenticated } from '../../services/authService';
 import { USER_ROLES } from '../../constants';
+import Farms from '../../components/Farms';
+import Crops from '../../components/Crops';
 
 export default function Dashboard() {
   const router = useRouter();
-  const user = isAuthenticated();
-  const { walletAddress, role, farms } = user;
-  const { farmer, distributor } = USER_ROLES;
+  const [user, setUser] = useState(null);
+  const { distributor } = USER_ROLES;
 
   useEffect(() => {
+    const user = isAuthenticated();
+    const { walletAddress, role, farms } = user;
+    setUser(user);
+
     if (!walletAddress) router.push('/');
     if (role === distributor) router.push('/distributor');
-    if (!farms) router.push('/farmer/register');
-  }, [distributor, farmer, role, farms, router, walletAddress]);
+    if (!farms) router.push('/farmer/register/farm');
+  }, []);
 
   return (
     <Layout>
-      <div className="flex flex-col max-w-5xl px-2 mx-auto space-y-4">
-        <div className="flex flex-col my-6 space-y-3 p-8">
-          <div className="mx-auto max-w-xl">
-            <h1 className="text-2xl font-extrabold sm:text-4xl text-center">
-              Farmer Dashboard
-            </h1>
-          </div>
+      <div className="p-6 flex items-center justify-center">
+        <div className="container max-w-screen-lg mx-auto">
+          <h2 className="font-semibold text-xl text-gray-600">
+            Farmer Dashboard
+          </h2>
+          <p className="text-gray-500 mb-6">Welcome to your dashboard.</p>
+          {user?.farms && <Farms farms={user.farms} />}
+          {user?.crops && <Crops headerText="Crops" crops={user.crops} />}
         </div>
       </div>
     </Layout>

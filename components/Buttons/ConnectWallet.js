@@ -1,7 +1,7 @@
 import { PeraWalletConnect } from '@perawallet/connect';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { isAuthenticated } from '../services/authService';
+import { isAuthenticated } from '../../services/authService';
 
 const peraWallet = new PeraWalletConnect();
 
@@ -62,7 +62,7 @@ export default function ConnectWallet() {
           : handleConnectWalletClick
       }
     >
-      {isConnectedToPeraWallet ? 'Disconnect' : 'Connect to Pera Wallet'}
+      {isConnectedToPeraWallet ? 'Disconnect' : 'Connect to Wallet'}
     </button>
   );
 }
