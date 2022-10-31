@@ -54,7 +54,7 @@ export default function Crops() {
   useEffect(() => {
     const filterCrops = user.farms.map((farm) => farm.crops);
     setUserCrops(filterCrops[0]);
-  }, []);
+  }, [user.farms]);
 
   const onSubmit = (values) => {
     let { crops } = user;
@@ -91,18 +91,22 @@ export default function Crops() {
                     <Form className="lg:col-span-2">
                       <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-6">
                         <div className="md:col-span-6">
-                          <Dropdown
-                            label="Farm"
-                            name="farm"
-                            options={user.farms}
-                          />
+                          {user?.farms && (
+                            <Dropdown
+                              label="Farm"
+                              name="farm"
+                              options={user?.farms}
+                            />
+                          )}
                         </div>
                         <div className="md:col-span-3">
-                          <Dropdown
-                            label="Type"
-                            name="type"
-                            options={userCrops}
-                          />
+                          {userCrops && (
+                            <Dropdown
+                              label="Type"
+                              name="type"
+                              options={userCrops}
+                            />
+                          )}
                         </div>
                         <div className="md:col-span-3">
                           <Dropdown

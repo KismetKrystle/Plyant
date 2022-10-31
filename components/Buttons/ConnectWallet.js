@@ -51,7 +51,7 @@ export default function ConnectWallet() {
         }
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [handleDisconnectWalletClick]);
 
   return (
     <button
