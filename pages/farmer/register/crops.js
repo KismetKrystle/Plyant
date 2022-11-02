@@ -12,7 +12,6 @@ import Textarea from '../../../components/Forms/Textarea';
 import Checkbox from '../../../components/Forms/Checkbox';
 
 const CropsSchema = Yup.object().shape({
-  farm: Yup.string().required('Required'),
   type: Yup.string()
     .oneOf([CROPS.map((crop) => crop.name)])
     .required('Required'),
@@ -35,7 +34,6 @@ export default function Crops() {
   const { walletAddress, role, farms } = user;
   const { farmer, distributor } = USER_ROLES;
   const initialValues = {
-    farm: '',
     type: '',
     dateHarvested: '',
     datePlanted: '',
@@ -43,6 +41,7 @@ export default function Crops() {
     cost: '',
     pesticides: '',
     specialTreatments: '',
+    reviewedForm: false,
   };
 
   useEffect(() => {
@@ -54,7 +53,7 @@ export default function Crops() {
   useEffect(() => {
     const filterCrops = user.farms.map((farm) => farm.crops);
     setUserCrops(filterCrops[0]);
-  }, [user.farms]);
+  }, []);
 
   const onSubmit = (values) => {
     let { crops } = user;
@@ -90,15 +89,6 @@ export default function Crops() {
                   {({ isSubmitting, isValid, dirty }) => (
                     <Form className="lg:col-span-2">
                       <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-6">
-                        <div className="md:col-span-6">
-                          {user?.farms && (
-                            <Dropdown
-                              label="Farm"
-                              name="farm"
-                              options={user?.farms}
-                            />
-                          )}
-                        </div>
                         <div className="md:col-span-3">
                           {userCrops && (
                             <Dropdown
