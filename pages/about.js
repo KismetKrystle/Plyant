@@ -9,7 +9,7 @@ export default function About() {
             <h1 className="font-semibold text-xl text-center">About Plyant</h1>
             <div className="mt-6 md:mt-6">
               <p className="mt-4 md:mb-6">
-                We are a dapp that helps incentivize community-based farming for
+                We are a dApp that helps incentivize community-based farming for
                 Vertical and CEA farmers.
               </p>
               <p className="mt-4 md:mb-6">
@@ -33,7 +33,7 @@ export default function About() {
               </p>
               <p className="mt-4 md:mb-6">
                 Here you will find an NFT directory of vertical farms and the
-                produce they grow. Eventually, through this dapp, you can invest
+                produce they grow. Eventually, through this dApp, you can invest
                 in an NFT that represents a specific farm. This investment will
                 help fund ongoing business success, such as equipment
                 improvements, staff upgrades, and community outreach projects.
@@ -45,7 +45,7 @@ export default function About() {
                 saving unnecessary carbon emissions.
               </p>
               <p className="mt-4 md:mb-6">
-                As we continue to develop the dapp, we will offer more ways to
+                As we continue to develop the dApp, we will offer more ways to
                 incentivize the farmers and to tokenize community participation.
                 As the value of this exchange and the farming businesses within
                 the network increase, so will the value of the token, opening
